@@ -734,7 +734,7 @@
 				var currentValue = readAccessor(self.v);
 				var options = isCollection(value) ? value.models : value;
 				var numOptions = options.length;
-				var enabled = true;
+				var enabled = !$element.prop('disabled');
 				var html = '';
 
 				// No options or default, and has an empty options placeholder:
