@@ -980,6 +980,13 @@ describe("Backbone.Epoxy.View", function() {
 		expect( $el.val() ).to.equal( "1" );
 	});
 
+	it("binding 'options:' should preserve previous enabled/disabled state after binding.", function() {
+		var $el = $(".test-select");
+		$el.prop('disabled', true);
+		viewModel.modifyArray("optionsList", "push", {label:"Leia", value:"3"});
+		expect( $el.prop('disabled') ).to.be.true;
+	});
+
 
 	it("binding 'options:' should update the bound model value when the previous selection is no longer available.", function() {
 		var $el = $(".test-select-default");
